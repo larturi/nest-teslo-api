@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ProductsModule } from './products/products.module';
 
 @Module({
   imports: [
@@ -16,6 +17,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       autoLoadEntities: Boolean(process.env.DB_AUTOLOAD_ENTITIES),
       synchronize:  Boolean(process.env.DB_SYNCHRONIZE),
     }),
+
+    ProductsModule,
   ],
   controllers: [],
   providers: [],

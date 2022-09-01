@@ -28,8 +28,8 @@ export class ProductsService {
   }
 
   async findAll(paginationDto: PaginationDto) {
-
     const { limit = 10, offset = 0 } = paginationDto;
+    
     try {
       const products = await this.productRepository.find({
         take: limit,
@@ -42,7 +42,6 @@ export class ProductsService {
   }
 
   async findOne(term: string) {
-
       let product: Product;
 
       if(isUUID(term)) {

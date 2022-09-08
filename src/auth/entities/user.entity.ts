@@ -1,4 +1,6 @@
 import { 
+    BeforeInsert,
+    BeforeUpdate,
     Column,
     Entity, 
     PrimaryGeneratedColumn 
@@ -13,7 +15,7 @@ export class User {
     @Column('text', { unique: true })
     email: string;
 
-    @Column('text')
+    @Column('text', { select: false})
     password: string;
 
     @Column('text')
@@ -24,4 +26,14 @@ export class User {
 
     @Column('text', { array: true, default: ['user'] })
     roles: string[];
+
+    @BeforeInsert()
+    checkFieldsBeforeInsert() {
+        this.email = this.email.toLowerCase().trim();
+    }
+
+    @BeforeUpdate()
+    checkFieldsBeforeUpdate() {
+        this.email = this.email.toLowerCase().trim();
+    }
 }

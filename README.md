@@ -20,4 +20,8 @@ docker-compose up -d
 http://localhost:3000/api/seed
 ```
 
-1. Levantar servicios: ```yarn start:dev```
+7. Levantar servicios: ```yarn start:dev```
+
+---
+
+##### Made with ❤️ by Leandro Arturi

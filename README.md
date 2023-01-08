@@ -24,4 +24,6 @@ http://localhost:3000/api/seed
 
 ---
 
+Deployed in https://render.com/
+
 ##### Made with ❤️ by Leandro Arturi
